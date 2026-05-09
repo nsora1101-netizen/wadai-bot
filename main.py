@@ -96,8 +96,8 @@ async def generate_topic(ctx):
         except discord.Forbidden:
             await ctx.send("エラー: メッセージ履歴を読み取る権限がありません。ボットの権限設定を確認してください。")
         except Exception as e:
-            print(f"Error during topic generation: {e}")
-            await ctx.send("話題の生成中にエラーが発生しました。しばらくしてからもう一度お試しください。")
+            print(f"Error during topic generation: {e}", flush=True)
+            await ctx.send(f"⚠️ 話題の生成中にエラーが発生しました。\n**エラー詳細:** `{str(e)}`\nしばらくしてからもう一度お試しください。")
 
 if __name__ == "__main__":
     # Webサーバーをバックグラウンドで起動
